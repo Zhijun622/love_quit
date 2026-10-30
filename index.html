@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fbf5f2">
+  <meta name="description" content="25道沉浸式情景题，测测你在亲密关系中的恋爱类型。">
+  <title>测测你的恋爱类型 · Love Notes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Love Notes 首页"><span class="brand-mark">♡</span><span>LOVE NOTES</span></a>
+    <span class="topbar-note">A LITTLE LOVE TEST</span>
+  </header>
+
+  <main class="shell">
+    <section id="home-screen" class="screen home-screen">
+      <div class="eyebrow"><span></span> LOVE PERSONALITY QUIZ <span></span></div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="hero-heart">♡</div><div class="spark spark-a">✦</div><div class="spark spark-b">✧</div><div class="spark spark-c">·</div>
+        <div class="hero-ribbon">LOVE<br>IS A STORY</div>
+      </div>
+      <h1>测测你的<br><em>恋爱类型</em></h1>
+      <p class="hero-subtitle">如果爱情是一场漫长的故事，<br>你会成为怎样的女主角？</p>
+      <div class="home-meta"><span>✦ 25 道情景题</span><i></i><span>约 5–8 分钟</span><i></i><span>6 种恋爱类型</span></div>
+      <button id="start-btn" class="primary-btn">开始探索 <span>↗</span></button>
+      <p class="home-footnote">没有标准答案，凭第一直觉选择就好。</p>
+    </section>
+
+    <section id="quiz-screen" class="screen quiz-screen hidden">
+      <div class="quiz-heading">
+        <button id="back-btn" class="icon-btn" aria-label="返回上一题">←</button>
+        <div class="progress-wrap"><div class="progress-label"><span>YOUR STORY</span><strong id="progress-text">01 / 25</strong></div><div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div></div>
+        <span class="chapter-mark" id="chapter-mark">01</span>
+      </div>
+      <div class="question-card">
+        <div class="question-kicker"><span class="kicker-line"></span><span id="chapter-name">心动的开始</span></div>
+        <div class="scene-box"><span class="scene-quote">“</span><p id="scene-text"></p></div>
+        <h2 id="question-text"></h2>
+        <p class="choose-hint">CHOOSE WHAT FEELS MOST LIKE YOU</p>
+        <div id="options-list" class="options-list"></div>
+      </div>
+      <div class="quiz-bottom"><span>♡ 不必思考太久，选择最自然的反应</span><span id="answered-count">已回答 0 题</span></div>
+    </section>
+
+    <section id="result-screen" class="screen result-screen hidden">
+      <div class="result-topline"><span>YOUR LOVE ARCHETYPE</span><span>♡</span></div>
+      <div class="result-hero">
+        <div class="result-orbit"></div><div class="result-symbol" id="result-symbol">☀</div>
+        <div class="result-overline" id="result-en">THE SUNSHINE PUPPY</div>
+        <h1 id="result-name">灿阳小狗</h1>
+        <div class="result-tag" id="result-tag">热烈主动型</div>
+        <p class="result-quote" id="result-quote"></p>
+      </div>
+      <div class="result-content">
+        <div class="result-section"><div class="section-label">01 / YOUR PORTRAIT</div><h2>你的恋爱画像</h2><p id="result-intro"></p><div class="hidden-side"><span class="hidden-label">✦ 不容易被发现的另一面</span><p id="result-hidden"></p></div></div>
+        <div class="keyword-row" id="result-keywords"></div>
+        <div class="two-columns">
+          <div class="trait-card"><div class="section-label">02 / YOUR LIGHT</div><h3>恋爱中的优势</h3><ul id="result-pros"></ul></div>
+          <div class="trait-card"><div class="section-label">03 / YOUR SHADOW</div><h3>需要留意的地方</h3><ul id="result-cons"></ul></div>
+        </div>
+        <div class="match-card"><div class="section-label">04 / YOUR BEST MATCH</div><div class="match-main"><div class="match-icon" id="match-icon">☾</div><div><span class="match-caption">最适配的恋爱类型</span><h3 id="match-name">月影御姐</h3></div><span class="match-heart">♡</span></div><p id="match-why"></p><div class="second-match"><span>也可能合拍</span><strong id="second-match">荆棘玫瑰</strong></div><div class="challenge-line"><strong>关系中的小挑战</strong><p id="result-challenge"></p></div></div>
+        <div class="advice-card"><span class="advice-icon">✧</span><div><div class="section-label">A NOTE FOR YOU</div><h3>写给你的恋爱建议</h3><p id="result-advice"></p></div></div>
+        <div class="result-disclaimer">本测试为娱乐性质的自我探索内容，不构成专业心理评估或诊断。每个人都拥有复杂而多面的自己，结果仅代表本次回答呈现出的倾向。</div>
+      </div>
+      <div class="result-actions"><button id="share-btn" class="primary-btn">分享我的结果 <span>↗</span></button><button id="retry-btn" class="secondary-btn">再测一次 ↻</button></div>
+    </section>
+  </main>
+  <footer class="footer"><span>LOVE NOTES</span><span>Made with a little tenderness ♡</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
